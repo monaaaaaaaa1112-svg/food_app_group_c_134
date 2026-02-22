@@ -15,6 +15,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
+      
       // الانتقال للصفحة التالية بعد الميتينج
     });
   }
