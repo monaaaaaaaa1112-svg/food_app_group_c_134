@@ -25,6 +25,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 24, top: 30),
+                    // يا بولا، اهتم بتوحيد المسافات واستخدام الـ ScreenUtil عشان التصميم يكون ريسبونسيف على كل الشاشات
                     child: Container(
                       width: 45,
                       height: 45,
@@ -101,6 +102,7 @@ class SearchScreen extends StatelessWidget {
   }
 }
 
+// يا بولا، احنا عندنا سيستم نافيجيشن جاهز في المشروع، يفضل تستخدمه بدل ما تعمل فانكشن مكررة زي دي
 void pushTo(BuildContext context, Widget view) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => view));
 }

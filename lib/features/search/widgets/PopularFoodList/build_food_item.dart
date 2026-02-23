@@ -8,6 +8,7 @@ Stack buildFoodItem() => Stack(
       child: Container(
         width: 153,
         height: 102,
+        // يا بولا، خلي بالك من الـ Colors والـ BorderRadius، يفضل تستخدم القيم المعرفة في AppColors عشان لو غيرنا الثيم يتغير في كل التطبيق
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: AppColors.greyLite,

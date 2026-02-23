@@ -22,6 +22,7 @@ Column buildRestaurantItem() => Column(
         Column(
           children: [
             Text("Pansi Restaurant", style: TextStyle(fontSize: 16)),
+            // يا بولا، بدل ما تبني صف التقييم يدوي كدة، استخدم ويدجت IconText اللي عملناها في الـ RestaurantCard عشان نوحد الشكل والخطوط
             Padding(
               padding: const EdgeInsets.only(right: 100),
               child: Row(
