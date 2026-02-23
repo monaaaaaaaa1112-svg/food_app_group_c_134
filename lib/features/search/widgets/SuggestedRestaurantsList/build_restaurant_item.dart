@@ -24,6 +24,8 @@ Column buildRestaurantItem() => Column(
         Column(
           children: [
             Text("Pansi Restaurant", style: TextStyle(fontSize: 16.sp)),
+            // تمام جداً انك استخدمت الـ IconText هنا يا بولا. 
+            // حاول بس تظبط الـ Padding اليمين واليسار عشان يكونوا متناسقين مع الهيدر اللي فوق
             Padding(
               padding: EdgeInsets.only(right: 100.w),
               child: IconText(

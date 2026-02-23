@@ -3,16 +3,17 @@ import 'package:food_app/core/styles/app_colors.dart';
 
 class CustomBackButton extends StatelessWidget {
   final VoidCallback? onPressed;
+  final Color? backgroundColor;
 
-  const CustomBackButton({super.key, this.onPressed});
+  const CustomBackButton({super.key, this.onPressed, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 45,
       height: 45,
-      decoration: const BoxDecoration(
-        color: AppColors.iceBlue,
+      decoration: BoxDecoration(
+        color: backgroundColor ?? Colors.white,
         shape: BoxShape.circle,
       ),
       child: IconButton(

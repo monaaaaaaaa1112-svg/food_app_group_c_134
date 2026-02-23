@@ -19,6 +19,7 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        // يا بولا، برافو على المجهود، بس احنا عندنا سيستم نافيجيشن جاهز في المشروع (navigations.dart)، استخدمه علطول بدل ما تكرر الكود هنا
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,6 +28,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 24.w, top: 30.h),
+                    // تسلم إيدك يا بولا انك استخدمت الـ ScreenUtil، كدة التصميم بقى ريسبونسيف وممتاز
                     child: Container(
                       width: 45.w,
                       height: 45.h,
@@ -34,7 +36,7 @@ class SearchScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(40.r),
                         color: AppColors.ingridents,
                       ),
-                      child: CustomBackButton(),
+                      child: const CustomBackButton(backgroundColor: AppColors.iceBlue),
                     ),
                   ),
                   Padding(
