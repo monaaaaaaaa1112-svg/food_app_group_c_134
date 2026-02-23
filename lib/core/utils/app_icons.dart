@@ -50,4 +50,6 @@ abstract class AppIcons {
   static const String salt = 'assets/icons/salt.svg';
   static const String papper = 'assets/icons/papper.svg';
   static const String thom = 'assets/icons/thom.svg';
+  static const String foodLogo = 'assets/icons/foodLogo.svg';
+  static const String blackArrow = 'assets/icons/blackArrow.svg';
 }

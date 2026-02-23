@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart'; // تأكد إنك ضفت المكتبة دي
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/utils/app_icons.dart';
+import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
+
+import 'package:food_app/features/auth/screens/login_empty_screen.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -17,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      pushReplacementTo(context,FoodDetailsScreen() );
+      pushReplacementTo(context, LoginEmptyScreen());
       // الانتقال للصفحة التالية بعد الميتينج
     });
   }
@@ -62,25 +65,9 @@ class _SplashViewState extends State<SplashView> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // الطربوش (جزئين فوق بعض)
-                buildImage(AppImages.topLogo, width: 20),
-                const SizedBox(height: 2),
-                buildImage(AppImages.headLogo, width: 40),
-
-                const SizedBox(height: 0), // مسافة بين الطربوش والكلمة
-                // كلمة FOOD (الحروف جنب بعض)
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    buildImage(AppIcons.fLogo, width: 45),
-                    const SizedBox(width: 4),
-                    buildImage(AppIcons.oLogo, width: 45),
-                    const SizedBox(width: 4),
-                    buildImage(AppIcons.oLogo, width: 45),
-                    const SizedBox(width: 4),
-                    buildImage(AppImages.dLogo, width: 50),
-                  ],
-                ),
+                // مسافة بين الطربوش والكلمة
+                // كلمة FOOD كاملة
+                buildImage(AppIcons.foodLogo, width: 200),
               ],
             ),
           ),
