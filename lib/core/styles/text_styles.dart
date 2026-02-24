@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/core/utils/app_fonts.dart';
 
 abstract class TextStyles {
   static const TextStyle headline = TextStyle(

@@ -6,8 +6,12 @@ import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
+import 'package:food_app/core/widgets/custom_back_button.dart';
+import 'package:food_app/core/widgets/custom_button.dart';
+import 'package:food_app/features/cart/screens/cart_screen.dart';
 import 'package:food_app/features/food_details_02/widgets/ingridents.dart';
 import 'package:food_app/features/food_details_02/widgets/product_atrributes.dart';
+import 'package:food_app/features/food_details_02/widgets/product_counter.dart';
 import 'package:food_app/features/food_details_02/widgets/radio_button.dart';
 
 class FoodDetailsScreen extends StatefulWidget {
@@ -36,7 +40,9 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadiusGeometry.circular(30),
+                          borderRadius: BorderRadiusGeometry.vertical(
+                            bottom: Radius.circular(30),
+                          ),
                           child: Image.asset(AppImages.picture1),
                         ),
                       ),
@@ -49,17 +55,18 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         // يا عراقي، هنا استبدل الـ ContainerButton بـ CustomBackButton اللي احنا عاملينه عشان نوحد التصميم
-                        ContainerButton(
-                          color: AppColors.greyLite,
-                          child: Icon(Icons.arrow_back_ios),
-                          ontap: () {
-                            pop(context);
-                          },
-                        ),
+                        CustomBackButton(backgroundColor: AppColors.greyLite),
+                        // ContainerButton(
+                        //   color: AppColors.greyLite,
+                        //   child: Icon(Icons.arrow_back_ios),
+                        //   ontap: () {
+                        //     pop(context);
+                        //   },
+                        // ),
                         // يا عراقي، زر المفضلة محتاج يكون بخلفية بيضاء وأيقونة قلب برتقالية (AppIcons.heart) زي اللي في التصميم
                         ContainerButton(
                           color: AppColors.greyLite,
-                          child: Icon(Icons.more_horiz),
+                          child: Icon(Icons.favorite, color: AppColors.primary),
                           ontap: () {},
                         ),
                       ],
@@ -118,7 +125,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     Row(
                       spacing: 33,
                       children: [
-                        // يا عراقي، المكونات محتاجة خلفية دائرية بلون فاتح (Tinted) مش بس الأيقونة، زي ما في التصميم
+                        // يا عراقي، المكونات محتاجة خلفية دائرية  بلون فاتح (Tinted) مش بس الأيقونة، زي ما في التصميم
                         Ingridents(icon: AppIcons.salt),
                         Ingridents(icon: AppIcons.chicken),
                         Ingridents(icon: AppIcons.onion),
@@ -145,8 +152,20 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
         ),
         child: Column(
           children: [
-            Row(children: [Text('\$32', style: TextStyles.title)]),
-            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('\$32', style: TextStyles.title),
+                ProductCounter(),
+              ],
+            ),
+            SizedBox(height: 20),
+            CustomButton(
+              onPressed: () {
+                pushTo(context, CartScreen());
+              },
+              text: 'ADD TO CART',
+            ),
           ],
         ),
       ),

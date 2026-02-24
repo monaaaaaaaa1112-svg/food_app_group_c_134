@@ -3,10 +3,9 @@ import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart'; // تأكد إنك ضفت المكتبة دي
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/utils/app_icons.dart';
-import 'package:food_app/core/utils/app_images.dart';
-import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 
 import 'package:food_app/features/auth/screens/login_empty_screen.dart';
+import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -20,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      pushReplacementTo(context, LoginEmptyScreen());
+      pushReplacementTo(context, FoodDetailsScreen());
       // الانتقال للصفحة التالية بعد الميتينج
     });
   }
