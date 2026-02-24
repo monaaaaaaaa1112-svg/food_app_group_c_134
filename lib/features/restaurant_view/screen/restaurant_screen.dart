@@ -7,7 +7,7 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_cardList.dart';
-import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector%20.dart';
+import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
 import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -24,7 +24,7 @@ class RestaurantScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                contenr(),
+                ImageCarousel(),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 40.h,
@@ -87,14 +87,14 @@ class RestaurantScreen extends StatelessWidget {
   }
 }
 
-class contenr extends StatefulWidget {
-  const contenr({super.key});
+class ImageCarousel extends StatefulWidget {
+  const ImageCarousel({super.key});
 
   @override
-  State<contenr> createState() => _contenrState();
+  State<ImageCarousel> createState() => _ImageCarouselState();
 }
 
-class _contenrState extends State<contenr> {
+class _ImageCarouselState extends State<ImageCarousel> {
   int activeIndex = 0;
 
   @override
