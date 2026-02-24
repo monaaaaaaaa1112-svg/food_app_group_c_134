@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/widgets/auth_background.dart';
 import '../../../core/widgets/custom_button.dart';

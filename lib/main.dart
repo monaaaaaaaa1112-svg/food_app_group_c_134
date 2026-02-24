@@ -12,7 +12,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/theme/themes.dart';
 import 'package:food_app/features/splash/splash_view.dart';
 //import 'core/utils/app_fonts.dart';
-import 'core/styles/app_colors.dart';
 
 void main() {
   runApp(const FoodApp());

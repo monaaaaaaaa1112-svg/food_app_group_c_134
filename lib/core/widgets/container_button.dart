@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/core/styles/app_colors.dart';
 
 class ContainerButton extends StatelessWidget {
   const ContainerButton({
