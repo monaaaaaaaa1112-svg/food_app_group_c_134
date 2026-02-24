@@ -35,7 +35,7 @@ class BuildHeader extends StatelessWidget {
         CircularIconButton(
           iconPath: AppIcons.search,
           backgroundColor: AppColors.secondary,
-          iconColor: Colors.white,
+          // iconColor: Colors.white,
           iconSize: 20,
         ),
         const SizedBox(width: 10),
@@ -44,7 +44,7 @@ class BuildHeader extends StatelessWidget {
           backgroundColor: AppColors.describtion.withOpacity(
             0.1,
           ), // خلفية داكنة
-          iconColor: AppColors.secondary, // لون أيقونة أبيض
+          // iconColor: AppColors.secondary, // لون أيقونة أبيض
           iconSize: 30, // حجم أصغر شوية ليناسب التصميم
           onPressed: () {
             // Search logic

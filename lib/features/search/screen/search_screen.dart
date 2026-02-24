@@ -34,7 +34,9 @@ class SearchScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(40.r),
                         color: AppColors.ingridents,
                       ),
-                      child: const CustomBackButton(backgroundColor: AppColors.iceBlue),
+                      child: const CustomBackButton(
+                        backgroundColor: AppColors.iceBlue,
+                      ),
                     ),
                   ),
                   Padding(
@@ -72,21 +74,18 @@ class SearchScreen extends StatelessWidget {
                 padding: EdgeInsets.only(left: 24.w),
                 child: Text(
                   "Recent Keywords",
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: TextStyle(fontSize: 20.sp),
                 ),
               ),
               RecentKeywordsList(),
               SizedBox(height: 20.h),
               Padding(
-                padding: EdgeInsets.only(left: 24.w),
+                padding: EdgeInsets.only(left: 30.w),
                 child: Text(
                   "Suggested Restaurants",
                   style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -94,7 +93,7 @@ class SearchScreen extends StatelessWidget {
               SuggestedRestaurantsList(),
               SizedBox(height: 20.h),
               Padding(
-                padding: EdgeInsets.only(left: 20.w),
+                padding: EdgeInsets.only(bottom: 10, left: 20.w),
                 child: Text(
                   "Popular Fast food",
                   style: TextStyle(fontSize: 20.sp),

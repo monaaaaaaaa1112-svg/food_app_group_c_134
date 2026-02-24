@@ -25,7 +25,7 @@ Column buildRestaurantItem() => Column(
           children: [
             Text("Pansi Restaurant", style: TextStyle(fontSize: 16.sp)),
             Padding(
-              padding: EdgeInsets.only(right: 100.w),
+              padding: EdgeInsets.only(right: 90.w),
               child: IconText(
                 iconPath: AppImages.star,
                 text: "4.7",
