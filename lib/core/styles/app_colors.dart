@@ -8,4 +8,5 @@ class AppColors {
   static const Color describtion = Color(0xFFA0A5BA);
   static const Color ingridents = Color(0xFFFFEBE4);
   static const Color iceBlue = Color(0xFFF0F5FA);
+  static const Color white = Color(0xFFFFFFFF);
 }
