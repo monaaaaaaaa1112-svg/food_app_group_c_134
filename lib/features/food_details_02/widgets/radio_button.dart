@@ -3,6 +3,8 @@ import 'package:food_app/core/styles/text_styles.dart';
 import 'package:group_button/group_button.dart';
 
 class SizeSelector extends StatelessWidget {
+  const SizeSelector({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GroupButton(

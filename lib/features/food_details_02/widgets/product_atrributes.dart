@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app/core/styles/text_styles.dart';
-import 'package:food_app/core/utils/app_icons.dart';
 
 class ProductAtrributes extends StatelessWidget {
   const ProductAtrributes({
