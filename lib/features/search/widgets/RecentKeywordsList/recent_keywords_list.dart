@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/features/search/data/product_model.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/build_keyword_chip.dart';
 
 class RecentKeywordsList extends StatelessWidget {
@@ -11,10 +12,12 @@ class RecentKeywordsList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
 
-        itemCount: 10,
+        itemCount: recentKeywords.length,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemBuilder: (context, index) {
-          return buildKeywordChip();
+          var model = recentKeywords[index];
+
+          return BuildKeywordChip(model: model);
         },
       ),
     );

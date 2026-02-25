@@ -34,7 +34,7 @@ abstract class AppIcons {
   static const String underArrow = 'assets/icons/UnderArrow.svg';
   static const String unseen = 'assets/icons/unseen.svg';
   static const String volume1 = 'assets/icons/volume1.svg';
-  static const String clock = 'assets/icons/clock.svg';
+  static const String clock = 'assets/icons/Clock.svg';
   static const String x = 'assets/icons/x.svg';
   static const String background1 = 'assets/icons/background1.svg';
   static const String dLogo = 'assets/icons/dLogo.svg';

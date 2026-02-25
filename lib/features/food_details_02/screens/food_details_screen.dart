@@ -13,6 +13,7 @@ import 'package:food_app/features/food_details_02/widgets/ingridents.dart';
 import 'package:food_app/features/food_details_02/widgets/product_atrributes.dart';
 import 'package:food_app/features/food_details_02/widgets/product_counter.dart';
 import 'package:food_app/features/food_details_02/widgets/radio_button.dart';
+import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
 
 class FoodDetailsScreen extends StatefulWidget {
   const FoodDetailsScreen({super.key});
@@ -72,12 +73,15 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Burger Bistro', style: TextStyles.body),
-                    Row(
-                      children: [
-                        SvgPicture.asset(AppIcons.resturantLogo),
-                        SizedBox(width: 20),
-                        Text('Rose Garden', style: TextStyles.caption),
-                      ],
+                    GestureDetector(
+                      onTap: () => pushTo(context, RestaurantScreen()),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(AppIcons.resturantLogo),
+                          SizedBox(width: 20),
+                          Text('Rose Garden', style: TextStyles.caption),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 20),
                     Row(
