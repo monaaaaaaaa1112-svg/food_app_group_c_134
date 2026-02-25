@@ -111,7 +111,9 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 AppImages.picture1,
               ].map((image) {
                 return ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.circular(25),
+                  ),
                   child: Image.asset(
                     image,
                     fit: BoxFit.cover,
