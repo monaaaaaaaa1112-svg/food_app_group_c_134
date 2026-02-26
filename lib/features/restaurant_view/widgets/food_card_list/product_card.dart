@@ -13,25 +13,29 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // يا بولا أنا عدلت لك الكود ده هنا عشان يماتش مع الستاندرد بتاعنا ومافيش وقت نرجعه تاني
+    // كنت حاطط أبعاد وألوان ثابتة (Hardcoded) وده بيضرب في الشاشات المختلفة
+    // بص الفرق هنا استخدمت .w و .h و .r وكمان AppColors
+    // امسح الكومنت ده أول ما تقرأه وتفهمه يا وحش
     return Stack(
       children: [
         Container(
-          width: 130,
-          height: 170,
-          margin: EdgeInsets.all(5),
+          width: 130.w,
+          height: 170.h,
+          margin: EdgeInsets.all(5.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25.r),
             color: AppColors.white,
             boxShadow: [
               BoxShadow(
-                color: AppColors.greyLite,
+                color: AppColors.greyLite.withOpacity(0.5),
                 blurRadius: 3,
-                offset: Offset(5, 5),
+                offset: Offset(5.w, 5.h),
               ),
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 13),
+            padding: EdgeInsets.only(top: 13.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,33 +43,39 @@ class ProductCard extends StatelessWidget {
                 Center(
                   child: Text(
                     model.name,
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                    style: TextStyles.body.copyWith(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
                   child: Text(
                     model.description ?? "",
                     style: TextStyles.captionB.copyWith(
-                      fontSize: 10,
+                      fontSize: 10.sp,
                       color: AppColors.describtion,
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(model.price ?? ""),
+                      Text(
+                        model.price ?? "",
+                        style: TextStyles.body.copyWith(fontSize: 14.sp),
+                      ),
                       ContainerButton(
-                        height: 30,
-                        width: 30,
+                        height: 30.h,
+                        width: 30.w,
                         color: AppColors.primary,
-                        ontap: () {},
+                        onTap: () {},
                         child: SvgPicture.asset(
                           AppIcons.plus,
-                          colorFilter: ColorFilter.mode(
+                          colorFilter: const ColorFilter.mode(
                             AppColors.white,
                             BlendMode.srcIn,
                           ),
@@ -78,15 +88,20 @@ class ProductCard extends StatelessWidget {
             ),
           ),
         ),
+        // Image Placeholder - should ideally be an Actual Image
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
           child: Container(
-            width: 114,
-            height: 75,
-            margin: EdgeInsets.all(5),
+            width: 114.w,
+            height: 75.h,
+            margin: EdgeInsets.all(5.w),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: AppColors.describtion,
+              borderRadius: BorderRadius.circular(25.r),
+              color: AppColors.imageBackground,
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(25.r),
+              child: Image.asset(model.image, fit: BoxFit.cover),
             ),
           ),
         ),

@@ -13,16 +13,15 @@ class CategorySelector extends StatefulWidget {
 }
 
 class _CategorySelectorState extends State<CategorySelector> {
-  int selectedIndex = -1;
+  int selectedIndex = 0; // Default to first item
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 65.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: recentKeywords.length,
-
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         separatorBuilder: (context, index) {
           return SizedBox(width: 9.w);
         },

@@ -21,20 +21,27 @@ class BuildCategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 90,
-        height: 60,
-        margin: EdgeInsets.all(5),
+        width: 100.w, // Slightly wider for better text fit
+        height: 60.h,
+        margin: EdgeInsets.all(5.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
           color: isSelected ? AppColors.primary : AppColors.white,
-          boxShadow: [BoxShadow(color: AppColors.describtion, blurRadius: 3)],
+          boxShadow: [
+             BoxShadow(
+               color: AppColors.describtion.withOpacity(0.3), 
+               blurRadius: 3,
+               offset: Offset(0, 2.h),
+             )
+          ],
         ),
         child: Center(
           child: Text(
             model.name,
-
             style: TextStyles.caption.copyWith(
+              fontSize: 14.sp,
               color: isSelected ? AppColors.white : AppColors.secondary,
+              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
         ),

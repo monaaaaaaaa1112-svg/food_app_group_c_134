@@ -10,26 +10,38 @@ class RestaurantInfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconText(
-          iconPath: AppIcons.star,
-          text: "4.7",
-          textStyle: GoogleFonts.sen(color: AppColors.secondary, fontSize: 14),
-        ),
-        SizedBox(width: 30.w),
-        IconText(
-          iconPath: AppIcons.car,
-          text: "free",
-          textStyle: GoogleFonts.sen(color: AppColors.secondary, fontSize: 14),
-        ),
-        SizedBox(width: 30.w),
-        IconText(
-          iconPath: AppIcons.clock,
-          text: "20 min",
-          textStyle: GoogleFonts.sen(color: AppColors.secondary, fontSize: 14),
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          IconText(
+            iconPath: AppIcons.star,
+            text: "4.7",
+            textStyle: TextStyles.body.copyWith(
+              color: AppColors.secondary,
+              fontSize: 14.sp,
+            ),
+          ),
+          SizedBox(width: 30.w),
+          IconText(
+            iconPath: AppIcons.car,
+            text: "free",
+            textStyle: TextStyles.body.copyWith(
+              color: AppColors.secondary,
+              fontSize: 14.sp,
+            ),
+          ),
+          SizedBox(width: 30.w),
+          IconText(
+            iconPath: AppIcons.clock,
+            text: "20 min",
+            textStyle: TextStyles.body.copyWith(
+              color: AppColors.secondary,
+              fontSize: 14.sp,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

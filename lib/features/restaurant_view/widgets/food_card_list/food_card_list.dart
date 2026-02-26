@@ -13,11 +13,10 @@ class FoodCardList extends StatelessWidget {
       height: 235.h,
       child: ListView.separated(
         shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: productCard.length,
-
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         separatorBuilder: (context, index) => SizedBox(width: 21.w),
         itemBuilder: (context, index) {
           var model = productCard[index];

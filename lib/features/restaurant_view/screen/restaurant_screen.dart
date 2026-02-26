@@ -23,7 +23,7 @@ class RestaurantScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                ImageCarousel(),
+                const ImageCarousel(),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 40.h,
@@ -32,11 +32,11 @@ class RestaurantScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomBackButton(backgroundColor: AppColors.iceBlue),
+                      const CustomBackButton(backgroundColor: AppColors.iceBlue),
                       ContainerButton(
                         color: AppColors.iceBlue,
-                        ontap: () {},
-                        child: Icon(Icons.more_horiz),
+                        onTap: () {},
+                        child: const Icon(Icons.more_horiz),
                       ),
                     ],
                   ),
@@ -44,40 +44,41 @@ class RestaurantScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RestaurantInfoRow(),
+                  const RestaurantInfoRow(),
                   SizedBox(height: 20.h),
-
                   Text(
                     'Spicy Restaurant',
-                    style: TextStyles.body.copyWith(fontSize: 20),
+                    style: TextStyles.body.copyWith(fontSize: 20.sp),
                   ),
+                  SizedBox(height: 8.h),
                   Text(
                     'Maecenas sed diam eget risus varius blandit sit omet non magna. Integer posuere erat a ante venenatis dopibus posuere velit aliquet.',
                     style: TextStyles.captionB.copyWith(
                       color: AppColors.describtion,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                     ),
                   ),
                 ],
               ),
             ),
-            CategorySelector(),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 190, top: 20),
-                  child: Text(
+            const CategorySelector(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(
                     'Burger (10)',
-                    style: TextStyles.body.copyWith(fontSize: 15),
+                    style: TextStyles.body.copyWith(fontSize: 15.sp, fontWeight: FontWeight.bold),
                   ),
-                ),
-
-                FoodCardList(),
-              ],
+                  SizedBox(height: 16.h),
+                  const FoodCardList(),
+                ],
+              ),
             ),
           ],
         ),

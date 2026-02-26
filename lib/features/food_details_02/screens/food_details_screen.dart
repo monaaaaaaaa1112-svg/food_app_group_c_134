@@ -59,7 +59,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ContainerButton(
                           color: AppColors.greyLite,
                           child: Icon(Icons.favorite, color: AppColors.primary),
-                          ontap: () {},
+                          onTap: () {},
                         ),
                       ],
                     ),

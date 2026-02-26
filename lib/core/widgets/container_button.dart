@@ -4,23 +4,21 @@ class ContainerButton extends StatelessWidget {
   const ContainerButton({
     super.key,
     required this.color,
-    required this.ontap,
+    required this.onTap,
     required this.child,
     this.height = 45,
     this.width = 45,
   });
   final Color color;
   final Widget child;
-  final Function ontap;
+  final VoidCallback onTap;
   final double height;
   final double width;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        ontap();
-      },
+      onTap: onTap,
       child: Container(
         width: width,
         height: height,
