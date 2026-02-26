@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/styles/app_colors.dart';
+import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
@@ -77,8 +78,12 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       onTap: () => pushTo(context, RestaurantScreen()),
                       child: Row(
                         children: [
-                          SvgPicture.asset(AppIcons.resturantLogo),
-                          SizedBox(width: 20),
+                          Image.asset(
+                            AppIcons.chef_logo,
+                            width: 22.w,
+                            height: 22.h,
+                          ),
+                          SizedBox(width: 8.w),
                           Text('Rose Garden', style: TextStyles.caption),
                         ],
                       ),
