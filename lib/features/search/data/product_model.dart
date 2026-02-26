@@ -42,6 +42,12 @@ List<ProductModel> popularFastFood = [
     description: "Cafenio Coffee Club ",
     name: "Buffalo Pizza.",
   ),
+  ProductModel(
+    id: "23",
+    description: "Italiano Restaurant",
+    name: "Margherita Pizza",
+  ),
+  ProductModel(id: "24", description: "Burger Factory", name: "Cheese Burger"),
 ];
 List<ProductModel> productCard = [
   ProductModel(

@@ -11,8 +11,6 @@ class PopularFoodList extends StatelessWidget {
     return SizedBox(
       height: 200.h,
       child: ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: popularFastFood.length,
         padding: EdgeInsets.symmetric(horizontal: 16.w),
