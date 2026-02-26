@@ -6,15 +6,15 @@ import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
-import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_cardList.dart';
 import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
+import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_card_list.dart';
 import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class RestaurantScreen extends StatelessWidget {
-  const RestaurantScreen({super.key, });
+  const RestaurantScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
