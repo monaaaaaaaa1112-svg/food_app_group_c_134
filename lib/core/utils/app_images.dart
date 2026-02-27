@@ -8,4 +8,5 @@ class AppImages {
   static const String delivery = 'assets/images/Delivery.svg';
   static const String clock = 'assets/images/Clock.svg';
   static const String star = 'assets/images/Star 1.svg';
+  static const String bigcard = 'assets/images/bigcard.png';
 }

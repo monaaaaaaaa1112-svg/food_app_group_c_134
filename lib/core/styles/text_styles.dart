@@ -11,6 +11,10 @@ abstract class TextStyles {
   );
   static const TextStyle body = TextStyle(
     fontSize: 22,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle body2 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w600,
   );
   static const TextStyle caption = TextStyle(

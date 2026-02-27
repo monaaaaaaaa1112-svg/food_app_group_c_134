@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
-import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/features/cart/widgets/counter.dart';
 
 class ProductVerticalCard extends StatelessWidget {
@@ -32,13 +31,7 @@ class ProductVerticalCard extends StatelessWidget {
             color: AppColors.lightGrey,
             borderRadius: BorderRadius.circular(25.r),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(25.r),
-            child: Image.asset(
-              image ?? AppImages.picture1, // Default image if none provided
-              fit: BoxFit.cover,
-            ),
-          ),
+          // child: image != null ? Image.asset(image!, fit: BoxFit.cover) : null,
         ),
         SizedBox(width: 20.w),
         Expanded(
@@ -54,13 +47,14 @@ class ProductVerticalCard extends StatelessWidget {
                       title,
                       style: TextStyles.body.copyWith(
                         color: AppColors.white,
+                        fontSize: 18.sp,
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {}, // Add removal logic if needed
+                  Padding(
+                    padding: EdgeInsets.only(left: 8.w),
                     child: SvgPicture.asset(
                       AppIcons.cancel,
                       width: 24.w,
@@ -74,8 +68,10 @@ class ProductVerticalCard extends StatelessWidget {
                 '\$$price',
                 style: TextStyles.body.copyWith(
                   color: AppColors.primary,
+                  fontSize: 20.sp,
                 ),
               ),
+              SizedBox(height: 12.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -83,6 +79,7 @@ class ProductVerticalCard extends StatelessWidget {
                     '$size"',
                     style: TextStyles.captionB.copyWith(
                       color: AppColors.white,
+                      fontSize: 16.sp,
                     ),
                   ),
                   const QuantityCounter(),

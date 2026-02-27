@@ -54,4 +54,9 @@ abstract class AppIcons {
   static const String blackArrow = 'assets/icons/blackArrow.svg';
   static const String chefLogo = 'assets/icons/2.png';
   static const String cancel = 'assets/icons/cancel.svg';
+  static const String cash = 'assets/icons/cash.svg';
+  static const String visa = 'assets/icons/visa.svg';
+  static const String mastercard = 'assets/icons/mastercard.svg';
+  static const String paypal = 'assets/icons/paypal.svg';
+  static const String bigCard = 'assets/icons/bigcard.svg';
 }
