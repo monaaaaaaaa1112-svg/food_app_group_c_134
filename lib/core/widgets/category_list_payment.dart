@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:food_app/core/styles/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CategoryList extends StatelessWidget {
+class CategoryListPayments extends StatelessWidget {
   final List<String> categories;
   final Function(String category)? onCategoryTap;
+  final List<String>? icons;
 
-  const CategoryList({
+  const CategoryListPayments({
     super.key,
     required this.categories,
     this.onCategoryTap,
+    this.icons,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160, // Adjusted height to accommodate 122px image + text + spacing
+      height:
+          160, // Adjusted height to accommodate 122px image + text + spacing
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -28,11 +33,14 @@ class CategoryList extends StatelessWidget {
                 children: [
                   // Image container
                   Container(
-                    width: 122,
-                    height: 122,
+                    width: 105,
+                    height: 100,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(24), // Outer radius as per design
+                      color: AppColors
+                          .lightGrey, // Placeholder color for the image background
+                      borderRadius: BorderRadius.circular(
+                        24,
+                      ), // Outer radius as per design
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.05),
@@ -43,13 +51,28 @@ class CategoryList extends StatelessWidget {
                     ),
                     child: Center(
                       child: Container(
-                        width: 96,
-                        height: 81,
+                        padding: const EdgeInsets.all(
+                          16,
+                        ), // Padding inside the image container
+                        width: 85,
+                        height: 72,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF98A8B8), // Same grey placeholder color as RestaurantCard
-                          borderRadius: BorderRadius.circular(12), // Inner radius
+                          color: Colors
+                              .transparent, // Same grey placeholder color as RestaurantCard
+                          borderRadius: BorderRadius.circular(
+                            12,
+                          ), // Inner radius
                         ),
-                        //ch Inside here would be the actual product image.
+                        // Inside here would be the actual product image.
+                        child: SvgPicture.asset(
+                          icons != null && index < icons!.length
+                              ? icons![index]
+                              : 'assets/icons/placeholder.svg', // Fallback placeholder icon
+
+                          width: 96,
+                          height: 81,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ),

@@ -105,6 +105,7 @@ class HomeScreen extends StatelessWidget {
 
                 // Categories List (Horizontal Scroll)
                 CategoryList(
+                  
                   categories: const ['Pizza', 'Burger', 'Hotdog', 'Pizza'],
                   onCategoryTap: (category) {
                     if (category == 'Burger') {

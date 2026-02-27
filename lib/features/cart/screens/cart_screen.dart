@@ -4,7 +4,7 @@ import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/core/widgets/custom_text_field.dart';
-import 'package:food_app/features/cart/screens/payment_screen.dart';
+import 'package:food_app/features/payments/screens/payment_screen.dart';
 import 'package:food_app/features/cart/widgets/cart_screen.dart';
 
 class CartScreen extends StatefulWidget {
@@ -33,6 +33,7 @@ class _CartScreenState extends State<CartScreen> {
                         Row(
                           spacing: 20,
                           children: [
+                            
                             Container(
                               width: 45,
                               height: 45,
