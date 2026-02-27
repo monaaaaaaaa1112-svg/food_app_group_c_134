@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/core/widgets/custom_text_field.dart';
-import 'package:food_app/features/payments/screens/payment_screen.dart';
-import 'package:food_app/features/cart/widgets/cart_screen.dart';
+import 'package:food_app/features/payment/screens/payment_screen.dart';
+import 'package:food_app/features/cart/widgets/product_vertical_card.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -19,45 +20,44 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      body: Center(
+      body: SafeArea(
         child: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 0.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    SizedBox(height: 20.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          spacing: 20,
                           children: [
-                            
                             Container(
-                              width: 45,
-                              height: 45,
+                              width: 45.w,
+                              height: 45.h,
                               decoration: BoxDecoration(
-                                color: AppColors.lightGrey, // خلفية بيضاء
-                                borderRadius: BorderRadius.circular(
-                                  50,
-                                ), // زوايا دائرية
+                                color: AppColors.lightGrey,
+                                borderRadius: BorderRadius.circular(50.r),
                               ),
                               child: IconButton(
                                 icon: Icon(
                                   Icons.arrow_back_ios_new,
                                   color: AppColors.white,
-                                ), // أيقونة العودة باللون الأساسي
+                                  size: 18.r,
+                                ),
                                 onPressed: () {
                                   pop(context);
                                 },
                               ),
                             ),
+                            SizedBox(width: 20.w),
                             Text(
                               'Cart',
-                              style: TextStyle(
+                              style: TextStyles.body.copyWith(
                                 color: AppColors.white,
-                                fontSize: 20,
+                                fontSize: 20.sp,
                               ),
                             ),
                           ],
@@ -68,40 +68,44 @@ class _CartScreenState extends State<CartScreen> {
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: AppColors.green,
+                              fontSize: 14.sp,
                             ),
                           ),
                           onPressed: () {},
                         ),
                       ],
                     ),
-                    SizedBox(height: 24),
-                    ProductVerticalCard(
+                    SizedBox(height: 24.h),
+                    const ProductVerticalCard(
                       title: 'Pizza Calzone\n European',
                       price: '52.33',
                       size: '14',
                     ),
-                    SizedBox(height: 30),
-                    ProductVerticalCard(
+                    SizedBox(height: 30.h),
+                    const ProductVerticalCard(
                       title: 'Pizza Calzone\n European',
                       price: '32.33',
                       size: '16',
                     ),
+                    SizedBox(height: 340.h), // Space for the bottom container
                   ],
                 ),
               ),
             ),
-            Container(
+            Align(
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: double.infinity,
-                height: 320,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
                 decoration: BoxDecoration(
-                  color: AppColors.white, // خلفية بيضاء
-                  borderRadius: BorderRadius.circular(30), // زوايا دائرية
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.r),
+                    topRight: Radius.circular(30.r),
+                  ),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,13 +124,14 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                       ],
                     ),
-
-                    CustomTextField(
+                    SizedBox(height: 8.h),
+                    const CustomTextField(
                       label: '',
                       hint: 'Enter your delivery address',
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
                           children: [
@@ -136,17 +141,18 @@ class _CartScreenState extends State<CartScreen> {
                                 color: AppColors.imageBackground,
                               ),
                             ),
-                            SizedBox(width: 8),
+                            SizedBox(width: 8.w),
+                            Text(
+                              '\$84.66',
+                              style: TextStyles.body.copyWith(
+                                color: AppColors.secondary,
+                                fontSize: 22.sp,
+                              ),
+                            ),
                           ],
                         ),
-                        Text(
-                          '\$84.66',
-                          style: TextStyles.body.copyWith(
-                            color: AppColors.secondary,
-                          ),
-                        ),
-                        SizedBox(width: 118),
                         TextButton(
+                          onPressed: () {},
                           child: Row(
                             children: [
                               Text(
@@ -155,23 +161,22 @@ class _CartScreenState extends State<CartScreen> {
                                   color: AppColors.primary,
                                 ),
                               ),
-                              SizedBox(width: 4),
+                              SizedBox(width: 4.w),
                               Icon(
                                 Icons.arrow_forward_ios,
-                                size: 12,
+                                size: 12.r,
                                 color: AppColors.imageBackground,
                               ),
                             ],
                           ),
-                          onPressed: () {},
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     CustomButton(
                       text: 'CHECK OUT',
                       onPressed: () {
-                        pushTo(context, PaymentScreen());
+                        pushTo(context, const PaymentScreen());
                       },
                     ),
                   ],
