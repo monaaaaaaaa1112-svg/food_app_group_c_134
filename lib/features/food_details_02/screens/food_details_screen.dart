@@ -9,12 +9,14 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
+import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:food_app/features/cart/screens/cart_screen.dart';
 import 'package:food_app/features/food_details_02/widgets/ingridents.dart';
 import 'package:food_app/features/food_details_02/widgets/product_atrributes.dart';
 import 'package:food_app/features/food_details_02/widgets/product_counter.dart';
 import 'package:food_app/features/food_details_02/widgets/radio_button.dart';
 import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
+import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
 
 class FoodDetailsScreen extends StatefulWidget {
   const FoodDetailsScreen({super.key});
@@ -78,25 +80,24 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       onTap: () => pushTo(context, RestaurantScreen()),
                       child: Row(
                         children: [
-                          Image.asset(
-                            AppIcons.chef_logo,
+                          SvgPicture.asset(
+                            AppIcons.resturantLogo,
                             width: 22.w,
                             height: 22.h,
                           ),
                           SizedBox(width: 8.w),
-                          Text('Rose Garden', style: TextStyles.caption),
+                          Text(
+                            'Rose Garden',
+                            style: TextStyles.captionB.copyWith(
+                              color: AppColors.secondary,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Row(
-                      spacing: 60,
-                      children: [
-                        ProductAtrributes(icon: AppIcons.star, text: '4.7'),
-                        ProductAtrributes(icon: AppIcons.car, text: 'Free'),
-                        ProductAtrributes(icon: AppIcons.clock, text: '20 min'),
-                      ],
                     ),
+                    SizedBox(height: 20),
+                    RestaurantInfoRow(),
                     SizedBox(height: 30),
                     Text(
                       'Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
