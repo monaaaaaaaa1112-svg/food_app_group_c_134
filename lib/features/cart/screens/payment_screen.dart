@@ -10,6 +10,9 @@ class PaymentScreen extends StatefulWidget {
 class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Payment Screen')));
+    return Scaffold(
+      appBar: AppBar(title: Text('Payment')),
+      body: Center(child: Text('Payment Screen')),
+    );
   }
 }
